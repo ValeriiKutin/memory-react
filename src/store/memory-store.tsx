@@ -2,19 +2,28 @@ import { create } from 'zustand'
 import { cardsData as initialCards } from '../data/cardsData'
 import type { MemoryCard } from '../types/memory'
 
+interface CardItem {
+    imgCard: string;
+    id: number;
+}
+
 interface GameStore {
     cards: MemoryCard[];
     setCards: (cards: MemoryCard[]) => void;
-    currentTurn: string[];
-    setCurrentTurn: (currentTurn: string[]) => void;
+    currentTurn: CardItem[];
+    setCurrentTurn: (currentTurn: CardItem[] | ((prev: CardItem[]) => CardItem[])) => void;
 }
 
 export const useGameStore = create<GameStore>((set) => ({
     cards: [...initialCards].sort(() => Math.random() - 0.5),
     currentTurn: [],
     setCards: (cards) => set({ cards }),
-    setCurrentTurn: (currentTurn) => set({ currentTurn })
-
+    setCurrentTurn: (updater) =>
+        set((state) => ({
+            currentTurn: typeof updater === 'function'
+                ? updater(state.currentTurn)
+                : updater
+        })),
 }));
 
 
