@@ -1,0 +1,353 @@
+<section class="agenda-schedule">
+    <div class="block-container">
+        <div class="schedule__mobile-filters">
+            <button class="filter-button active" data-role="filter-all">
+                <span>All directions</span>
+            </button>
+            <button class="filter-button" data-role="filter-business">
+                <span>Business</span>
+            </button>
+            <button class="filter-button" data-role="filter-technical">
+                <span>Technical</span>
+            </button>
+        </div>
+
+        <table class="schedule__table">
+            <tr class="schedule__info">
+                <td></td>
+                <td>
+                    <div class="business-info">
+                        <h4 class="section-title highlight-text">
+                            Business
+                        </h4>
+                        <p class="place">Auditorium №1</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="technical">
+                        <h4 class="section-title">
+                            Technical
+                        </h4>
+                        <p class="place">Auditorium №2</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">09:00 - 09:30</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        Registration
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">09:30</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        An introductory word
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">10:00-10:30</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_free_business_slot"}}
+                <td class="slot tech">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                            Hyvä Certifications - how they were built and what to expect when taking an exam
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/vinai-hyva.jpg}}" alt="Вінай Копп">
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Vinai Kopp</div>
+                                <div class="slot__card-speaker-position">Technical Director</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg.png}}" alt="speaker-logo"
+                                    class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">10:30-11:00</span>
+                </td>
+                <td class="slot business">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                            Marketing with AI: Practical Cases, Numbers and Solutions
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/oleksandr-shrako.png}}" alt="Олександр Шарко">
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Oleksandr Sharko</div>
+                                <div class="slot__card-speaker-position">Head of AI implementation</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg_1.png}}" alt="speaker-logo"
+                                    class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_technical_slot"}}
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">11:00-11:30</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        Coffee break, Networking
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">11:30-12:00</span>
+                </td>
+                <td class="slot business">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                            UX as a Growth Lever: The Business Impact of Interface Design in 2025–26
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/Frame_911_1_.png}}" alt="Денис Студенніков">
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Denys Studennikov</div>
+                                <div class="slot__card-speaker-position">COO</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg_9.png}}" alt="speaker-logo"
+                                    class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_technical_slot"}}
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">12:00-12:30</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                <td class="slot tech">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                            AI-Powered Admin Assistants in Magento 2
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/oleksandr-mirasvit.png}}"
+                                    alt="Олександр Дрок">
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Oleksandr Drok</div>
+                                <div class="slot__card-speaker-position">Co-founder</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg_3.png}}" alt="speaker-logo"
+                                    class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">12:30-13:00</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_technical_slot"}}
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">13:00-14:00</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        Lunch, break
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">14:00-14:30</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_technical_slot"}}
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">14:30-15:00</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                <td class="slot tech">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                            Zero-Downtime Deployments Made Simple: A DevOps-Free Approach
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/Frame_911_4_.png}}" alt="Ігор Вансач">
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Ihor Vansach</div>
+                                <div class="slot__card-speaker-position">CEO</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg_7.png}}" alt="speaker-logo"
+                                    class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">15:00-15:30</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_technical_slot"}}
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">15:30-16:00</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        Coffee break, Networking
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">16:00-16:30</span>
+                </td>
+                {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+                block_id="agenda_pending_business_slot"}}
+                 <td class="slot tech">
+                    <div class="slot__card">
+                        <div class="slot__card-title">
+                           App Builder in Live projects
+                        </div>
+                        <div class="slot__card-content">
+                            <div class="slot__card-content__img">
+                                <img src="{{media url=.renditions/wysiwyg/Frame_911_5_.png}}" alt="Олег Блинников" />
+                            </div>
+                            <div class="slot__card-speaker-info">
+                                <div class="slot__card-speaker-name">Oleh Blynnykov</div>
+                                <div class="slot__card-speaker-position">Team Lead</div>
+                                <img src="{{media url=.renditions/wysiwyg/white_bg_8.png}}" alt="speaker-logo"
+                                     class="slot__card-speaker-logo">
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">16:30-17:10</span>
+                </td>
+                <td colspan="2" class="theme-slot special">
+                    <span class="theme-title">
+                        Panel discussion
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">17:10-17:30</span>
+                </td>
+                <td colspan="2" class="theme-slot special">
+                    <span class="theme-title">
+                        Final word
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-cell">
+                    <span class="time-slot">17:30</span>
+                </td>
+                <td colspan="2" class="theme-slot">
+                    <span class="theme-title">
+                        Afterparty
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+        <div class="agenda-schedule__action">
+            {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+            block_id="mm_register_button"}}
+        </div>
+
+    </div>
+</section>
+<style>
+    .slot.tech {
+        background-color: #ebeaf1;
+    }
+
+    .slot.business {
+        background-color: #fbeceb;
+    }
+
+    .slot__card-content__img img {
+        width: 80px;
+        height: 88px;
+        border-radius: 4px;
+    }
+
+    .slot__card .slot__card-title {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .slot__card .slot__card-content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .slot__card-content .slot__card-content__img {
+        margin-right: 16px;
+    }
+
+    .slot__card-content .slot__card-speaker-info .slot__card-speaker-name {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .slot__card-content .slot__card-speaker-info .slot__card-speaker-position {
+        font-weight: 400;
+        font-size: 16px;
+        color: #8681B2;
+        margin-bottom: 9px;
+    }
+
+    .slot__card-content .slot__card-speaker-info .slot__card-speaker-logo {
+        max-width: 80px;
+    }
+</style>
