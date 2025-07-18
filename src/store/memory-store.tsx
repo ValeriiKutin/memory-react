@@ -6,14 +6,14 @@ interface GameStore {
     cards: MemoryCard[];
     setCards: (cards: MemoryCard[]) => void;
     currentTurn: string[];
-    secCurrentTurn: (currentTurn: string[]) => void;
+    setCurrentTurn: (currentTurn: string[]) => void;
 }
 
 export const useGameStore = create<GameStore>((set) => ({
     cards: [...initialCards].sort(() => Math.random() - 0.5),
     currentTurn: [],
     setCards: (cards) => set({ cards }),
-    secCurrentTurn: (currentTurn) => set({ currentTurn })
+    setCurrentTurn: (currentTurn) => set({ currentTurn })
 
 }));
 

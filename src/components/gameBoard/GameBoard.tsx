@@ -7,7 +7,7 @@ import { useGameStore } from "../../store/memory-store";
 const GameBoard = () => {
     const cards = useGameStore((state) => state.cards);
     const setCards = useGameStore((state) => state.setCards);
-
+    const setCurrentTurn = useGameStore((state) => state.setCurrentTurn);
 
     const flipCard = (id: number) => {
         const updated = cards.map((card) => {
