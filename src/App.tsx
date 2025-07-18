@@ -1,14 +1,9 @@
-
 import './App.css'
+import GameBoard from './components/gameBoard/GameBoard'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div></div>
-    </>
-  )
+  return <GameBoard />
 }
 
 export default App
