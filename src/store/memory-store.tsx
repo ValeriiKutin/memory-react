@@ -5,12 +5,16 @@ import type { MemoryCard } from '../types/memory'
 interface GameStore {
     cards: MemoryCard[];
     setCards: (cards: MemoryCard[]) => void;
+    currentTurn: string[];
+    secCurrentTurn: (currentTurn: string[]) => void;
 }
 
 export const useGameStore = create<GameStore>((set) => ({
     cards: [...initialCards].sort(() => Math.random() - 0.5),
     currentTurn: [],
-    setCards: (cards) => set({ cards })
+    setCards: (cards) => set({ cards }),
+    secCurrentTurn: (currentTurn) => set({ currentTurn })
+
 }));
 
 
