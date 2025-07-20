@@ -39,7 +39,8 @@ const GameBoard = () => {
             const [firstTurn, secondTurn] = currentTurn;
             if (firstTurn.imgCard === secondTurn.imgCard) {
                 console.log('match')
-                const updated = cards.map((card) => firstTurn.imgCard === card.imgCard && secondTurn.imgCard === card.imgCard ? { ...card, isMatch: true } : card);
+                const freshCards = useGameStore.getState().cards;
+                const updated = freshCards.map((card) => firstTurn.imgCard === card.imgCard ? { ...card, isMatch: true } : card);
                 setCards(updated);
                 setTimeout(() => {
                     setCurrentTurn([])
