@@ -12,6 +12,20 @@ const GameBoard = () => {
     const setCurrentTurn = useGameStore((state) => state.setCurrentTurn);
     const moves = useGameStore((state) => state.moves);
     const setMoves = useGameStore((state) => state.setMoves);
+    const win = cards.every((item) => item.isMatch === true);
+
+
+    const restartGame = () => {
+        if (win) {
+            const resetCards = cards.map((card) => card && { ...card, isMatch: false, isFlipped: false })
+            setTimeout(() => {
+                setCards(resetCards)
+                setMoves(0);
+                setCurrentTurn([])
+            }, 3000)
+        }
+    }
+
 
     const handleCheckCard = (id: number) => {
 
@@ -64,12 +78,13 @@ const GameBoard = () => {
 
         }
 
-
     }, [currentTurn, setCards, setCurrentTurn])
 
 
+    console.log(cards);
+
     return (
-        <div>
+        <div className="relative">
             <div className="bg-cyan-500 text-white py-5 px-10 rounded-xl flex items-center gap-4 max-w-[180px] mx-auto justify-center">Moves: <span className="text-red-600 text-3xl">{moves}</span></div>
             <div className="w-full h-full flex justify-center mt-36">
                 <div className="flex flex-wrap w-3/5 justify-center items-center gap-0.5">
@@ -78,6 +93,14 @@ const GameBoard = () => {
                     ))}
                 </div>
             </div>
+
+            {win && (
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 h-full w-full bg-gray-500/95 p-4 rounded">
+                    <p className="text-6xl font-bold">You win with {moves} moves! Awesome result!!!</p>
+
+                    <button className="mt-8" onClick={restartGame}>Restart game</button>
+                </div>
+            )}
         </div>
 
 
