@@ -10,6 +10,8 @@ const GameBoard = () => {
     const setCards = useGameStore((state) => state.setCards);
     const currentTurn = useGameStore((state) => state.currentTurn);
     const setCurrentTurn = useGameStore((state) => state.setCurrentTurn);
+    const moves = useGameStore((state) => state.moves);
+    const setMoves = useGameStore((state) => state.setMoves);
 
     const handleCheckCard = (id: number) => {
 
@@ -36,6 +38,8 @@ const GameBoard = () => {
 
     useEffect(() => {
         if (currentTurn.length === 2) {
+            setMoves(moves + 1)
+
             const [firstTurn, secondTurn] = currentTurn;
             if (firstTurn.imgCard === secondTurn.imgCard) {
                 console.log('match')
@@ -63,18 +67,19 @@ const GameBoard = () => {
 
     }, [currentTurn, setCards, setCurrentTurn])
 
-    console.log(cards);
-    console.log(currentTurn);
-
 
     return (
-        <div className="w-full h-full flex justify-center">
-            <div className="flex flex-wrap w-3/5 justify-center items-center gap-0.5">
-                {cards && cards?.map((card, index) => (
-                    <Card card={card} index={index} onFlip={() => handleCheckCard(card.id)} key={`${card.id}-${index}`} />
-                ))}
+        <div>
+            <div className="bg-cyan-500 text-white py-5 px-10 rounded-xl flex items-center gap-4 max-w-[180px] mx-auto justify-center">Moves: <span className="text-red-600 text-3xl">{moves}</span></div>
+            <div className="w-full h-full flex justify-center mt-36">
+                <div className="flex flex-wrap w-3/5 justify-center items-center gap-0.5">
+                    {cards && cards?.map((card, index) => (
+                        <Card card={card} index={index} onFlip={() => handleCheckCard(card.id)} key={`${card.id}-${index}`} />
+                    ))}
+                </div>
             </div>
         </div>
+
 
     )
 }

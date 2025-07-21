@@ -12,11 +12,14 @@ interface GameStore {
     setCards: (cards: MemoryCard[]) => void;
     currentTurn: CardItem[];
     setCurrentTurn: (currentTurn: CardItem[] | ((prev: CardItem[]) => CardItem[])) => void;
+    moves: number;
+    setMoves: (moves: number) => void;
 }
 
 export const useGameStore = create<GameStore>((set) => ({
     cards: [...initialCards].sort(() => Math.random() - 0.5),
     currentTurn: [],
+    moves: 0,
     setCards: (cards) => set({ cards }),
     setCurrentTurn: (updater) =>
         set((state) => ({
@@ -24,6 +27,7 @@ export const useGameStore = create<GameStore>((set) => ({
                 ? updater(state.currentTurn)
                 : updater
         })),
+    setMoves: (moves) => set({ moves })
 }));
 
 
